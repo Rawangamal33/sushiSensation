@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { GoDiamond } from "react-icons/go";
 import { useForm, ValidationError } from "@formspree/react";
+import toast, { Toaster } from "react-hot-toast";
 
 const ReservationRight = () => {
   const [state, handleSubmit] = useForm("xzzvrzkr");
-  if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
-  }
+  useEffect(() => {
+    if (state.succeeded) {
+      toast.success("Successfully toasted!");
+    }
+  }, [state.succeeded]);
   return (
     <div className=" borderStyles lg:mt-0 mt-4.5 py-14 px-18 flex flex-col items-center">
       <h1 className="text-xl uppercase tracking-wider text-center  mb-10 flex justify-center items-center  ">
@@ -32,6 +35,7 @@ const ReservationRight = () => {
           placeholder="Name"
           className="inputStyles"
           name="name"
+          required
         />
         <ValidationError prefix="Name" field="name" errors={state.errors} />
         <input
@@ -39,6 +43,7 @@ const ReservationRight = () => {
           placeholder="Phone Number"
           className="inputStyles"
           name="phone"
+          required
         />
         <ValidationError prefix="Phone" field="phone" errors={state.errors} />
 
@@ -47,6 +52,7 @@ const ReservationRight = () => {
           placeholder="Email"
           className="inputStyles"
           name="email"
+          required
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
         <div className="flex justify-evenly flex-wrap items-center gap-4 ">
@@ -55,6 +61,7 @@ const ReservationRight = () => {
             placeholder="Guests"
             className="smallInputStyles"
             name="guests"
+            required
           />
           <ValidationError
             prefix="Guests"
@@ -66,6 +73,7 @@ const ReservationRight = () => {
             placeholder="Date"
             className="smallInputStyles "
             name="date"
+            required
           />
           <ValidationError prefix="Date" field="date" errors={state.errors} />
           <input
@@ -73,6 +81,7 @@ const ReservationRight = () => {
             placeholder="Time"
             className="smallInputStyles"
             name="time"
+            required
           />
           <ValidationError prefix="Time" field="time" errors={state.errors} />
         </div>
@@ -83,6 +92,7 @@ const ReservationRight = () => {
         >
           RESERVE
         </button>
+        <Toaster position="top-center" reverseOrder={false} />
       </form>
     </div>
   );
