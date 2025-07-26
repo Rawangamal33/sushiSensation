@@ -20,20 +20,24 @@ const HomeRoutes = () => {
           title: "OUR RESTAURANT",
         },
       ].map((item, index) => (
-        <div className="card relative w-full h-[120px] lg:h-auto" key={index}>
-          <div className="cardImg h-full">
+        <div
+          className="card relative w-full h-[120px] group lg:h-auto"
+          key={index}
+        >
+          <div className="cardImg h-full relative">
             <img
               src={item.imageCover}
               alt="menu image"
               className="rounded-[8px] w-full h-full object-cover"
             />
+            <div className="absolute inset-0 bg-black/40 opacity-0 rounded-[8px]  group-hover:opacity-100  transition-opacity duration-300 "></div>
           </div>
           <div
             className="route absolute right-0 bottom-0 bg-mainBackGroundColor p-1 pt-4 pl-4 rounded-tl-[30%] before:content-['']
-        before:w-3 before:h-3 before:bg-transparent before:absolute before:top-[-0.7rem] before:right-0 before:rounded-br-[4px] before:shadow-[2px_2px_#0a0b0a] "
+        before:w-3 before:h-3 before:bg-transparent before:absolute before:top-[-0.7rem] before:right-0 before:rounded-br-[4px] before:shadow-[2px_2px_#0a0b0a] cursor-pointer"
           >
             <NavLink to={`${item.path}`} className="flex  items-center gap-2">
-              <span className="generalTextFont text-xs lg:text-[13px]">
+              <span className="generalTextFont text-xs lg:text-[13px] text-white">
                 {item.title}
               </span>
               <div className="icon p-1 text-xs lg:text-[14px]">

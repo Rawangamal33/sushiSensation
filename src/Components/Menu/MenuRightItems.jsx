@@ -11,13 +11,13 @@ const MenuRightItems = () => {
         <li className="listStyles border-mainTextColor/30">URAMAKI</li>
         <li className="listStyles border-mainTextColor/30">SPECIAL ROLLS</li>
       </ul>
-      <div className="container text-mainTextColor/90 mt-20 flex flex-col items-center justify-center gap-22">
+      <div className="container  mt-20 flex flex-col items-center justify-center gap-22">
         {menuData.map((item) => (
           <div className="eachCatgory">
             <H1com title={item.category} />
 
             {item.items.map((one) => (
-              <div className="item flex items-center justify-evenly gap-5 mb-10">
+              <div className="item flex flex-wrap items-center justify-evenly gap-5 mb-30">
                 <img
                   src={one.image}
                   alt="dish image"

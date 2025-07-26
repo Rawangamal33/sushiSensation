@@ -1,7 +1,6 @@
 import React from "react";
 import { GoDiamond } from "react-icons/go";
 import { useForm, ValidationError } from "@formspree/react";
-import H1com from "../ReusedComponents/H1com";
 
 const ReservationRight = () => {
   const [state, handleSubmit] = useForm("xzzvrzkr");
@@ -9,8 +8,15 @@ const ReservationRight = () => {
     return <p>Thanks for joining!</p>;
   }
   return (
-    <div className="text-mainTextColor/90 borderStyles lg:mt-0 mt-4.5 py-14 px-18 flex flex-col items-center">
-      <H1com title="RESERVATION" />
+    <div className=" borderStyles lg:mt-0 mt-4.5 py-14 px-18 flex flex-col items-center">
+      <h1 className="text-xl uppercase tracking-wider text-center  mb-10 flex justify-center items-center  ">
+        <GoDiamond className="text-[11px] text-mainTextColor/20" />
+
+        <span className=" block h-px w-10 bg-mainTextColor/20"></span>
+        <span className="mx-5">RESERVATION </span>
+        <span className=" block h-px w-10  bg-mainTextColor/20"></span>
+        <GoDiamond className="text-[11px] text-mainTextColor/20" />
+      </h1>
       <p className="max-w-[400px] text-mainTextColor/80 text-center tracking-wide mb-17">
         Secure your spot at Qitchen, where exceptional sushi and a remarkable
         dining experience await.
@@ -19,7 +25,7 @@ const ReservationRight = () => {
         action="https://formspree.io/f/xzzvrzkr"
         method="POST"
         className="flex flex-col justify-center items-center gap-4"
-        nSubmit={handleSubmit}
+        onSubmit={handleSubmit}
       >
         <input
           type="text"
@@ -43,11 +49,11 @@ const ReservationRight = () => {
           name="email"
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
-        <div className="flex justify-evenly items-center gap-4">
+        <div className="flex justify-evenly flex-wrap items-center gap-4 ">
           <input
             type="number"
             placeholder="Guests"
-            className="inputStyles w-[189px]"
+            className="smallInputStyles"
             name="guests"
           />
           <ValidationError
@@ -58,14 +64,14 @@ const ReservationRight = () => {
           <input
             type="date"
             placeholder="Date"
-            className="inputStyles w-[189px]"
+            className="smallInputStyles "
             name="date"
           />
           <ValidationError prefix="Date" field="date" errors={state.errors} />
           <input
             type="time"
             placeholder="Time"
-            className="inputStyles w-[189px]"
+            className="smallInputStyles"
             name="time"
           />
           <ValidationError prefix="Time" field="time" errors={state.errors} />
@@ -73,7 +79,7 @@ const ReservationRight = () => {
         <button
           type="submit"
           disabled={state.submitting}
-          className="inputStyles text-[16px] bg-mainTextColor text-mainBackGroundColor"
+          className="inputStyles text-[16px] bg-mainTextColor text-mainBackGroundColor cursor-pointer hover:bg-mainTextColor/90"
         >
           RESERVE
         </button>

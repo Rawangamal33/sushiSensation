@@ -17,7 +17,12 @@
   @apply py-2 px-4 rounded-[7px]  border border-[#EFE7D2];
 }
 @utility inputStyles {
-  @apply border border-mainTextColor/30 rounded-[8px] text-xl py-3 px-5 bg-[#181818] text-mainTextColor placeholder:text-mainTextColor/80 w-[600px];
+  @apply border border-mainTextColor/30 rounded-[8px] text-xl py-3 px-5 bg-[#181818] text-mainTextColor placeholder:text-mainTextColor/80
+   lg:w-[450px] md:w-[510px]  sm:w-[360px] w-[250px];
+}
+@utility smallInputStyles {
+  @apply border border-mainTextColor/30 rounded-[8px]  py-3  bg-[#181818] text-mainTextColor placeholder:text-mainTextColor/80
+   lg:w-[139px] md:w-[160px]  lg:text-xl  lg:px-5  px-3;
 }
 @utility borderStyles {
   @apply border border-mainTextColor/30 rounded-[16px];

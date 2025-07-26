@@ -90,18 +90,17 @@ const ContactRight = () => {
       <div className="fourth h-full mt-0.5 borderStyles px-14 py-7 flex flex-col justify-evenly items-center gap-2 overflow-hidden">
         <H1com title="GET IN TOUCH" />
         <div className="flex flex-col gap-7 text-mainTextColor/80">
-          <div className="flex justify-between  gap-10">
-            <p>ADDRESS</p>
-            <p className="text-end">23 Greenfield Avenue, Prague 120 00</p>
-          </div>
-          <div className="flex justify-between  gap-10">
-            <p>PHONE</p>
-            <p>+49 1234 567890</p>
-          </div>
-          <div className="flex justify-between  gap-10">
-            <p>EMAIL</p>
-            <p>rawangamakl@gmail.com</p>
-          </div>
+          {[
+            { title: "ADDRESS", desc: "23 Greenfield Avenue, Prague 120 00" },
+            { title: "PHONE", desc: "+49 1234 567890" },
+            { title: "EMAIL", desc: "rawangamakl@gmail.com" },
+          ].map((item, index) => (
+            <div className="flex justify-between  gap-10" key={index}>
+              <p>{item.title}</p>
+              <p className="text-end">{item.desc}</p>
+            </div>
+          ))}
+
           <div className="flex justify-between  gap-10">
             <p>FOLLOW</p>
             <div className="flex gap-4 text-[13px]">
