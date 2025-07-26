@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=League+Spartan:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@theme {
+  --color-mainTextColor: #efe7d2;
+  --color-mainBackGroundColor: #0a0b0a;
+}
+
+@layer components {
+  .icon {
+    @apply p-2 border-1 border-gray-300 rounded-full  bg-[#181818];
+  }
+  .generalTextFont {
+    @apply tracking-[0.17em] opacity-[0.9];
+  }
+}
+@utility listStyles {
+  @apply py-2 px-4 rounded-[7px]  border border-[#EFE7D2];
+}
+@utility inputStyles {
+  @apply border border-mainTextColor/30 rounded-[8px] text-xl py-3 px-5 bg-[#181818] text-mainTextColor placeholder:text-mainTextColor/80 w-[600px];
+}
+@utility borderStyles {
+  @apply border border-mainTextColor/30 rounded-[16px];
+}
+body {
+  font-family: "EB Garamond", serif;
+  background-color: #0a0b0a;
+  min-height: 100vh;
+  padding: 12px;
+}
